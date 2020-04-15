@@ -1,0 +1,6 @@
+<h1>Edit Session</h1>
+
+<%= render partial: 'form' %>
+
+<%= link_to 'Delete Session', session_path(@session), method: :delete, data: { confirm: "Are you sure?" } %>
+<%= link_to 'Back', sessions_path %>

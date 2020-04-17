@@ -1,0 +1,41 @@
+<div class="sessions-card p-4">
+  <div class="sessions-header mb-4">
+    <h2><%= @session.name %></h2>
+  </div>
+
+  <div class="d-flex flex-row justify-content-end">
+    <div class="sessions-card-main col-10 p-0">
+      <h5 class="mb-2">Trainees (3<%#= @trainees.size %>)</h5>
+      <ul>
+        <li class="trainee-item">Alberto Contador ** change me **</li>
+        <%# @trainees.each do |trainee| %>
+          <!-- <li class="trainee-item"><%#= trainee.name %></li> -->
+        <%# end %>
+      </ul>
+
+    </div>
+    <div class="sessions-card-side col-2 p-2 d-flex flex-column align-items-center">
+      <div class="sessions-date mb-2 d-flex justify-content-between">
+        <h1 class="mr-2"><%= @session.start_date.strftime("%d") %></h1>
+        <div>
+          <p><%= @session.start_date.strftime("%b") %></p>
+          <h5><%= @session.start_date.strftime("%Y") %></h5>
+        </div>
+      </div>
+      <i class="fas fa-arrow-down"></i>
+      <div class="sessions-date mt-2 d-flex justify-content-between">
+        <h1 class="mr-2"><%= @session.end_date.strftime("%d") %></h1>
+        <div>
+          <p><%= @session.end_date.strftime("%b") %></p>
+          <h5><%= @session.end_date.strftime("%Y") %></h5>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="sessions-footer d-flex flex-row justify-content-between mt-4">
+    <%= link_to 'Back', sessions_path, class: 'btn btn-sm btn-outline-info' %>
+    <%= link_to 'Edit Session', edit_session_path(@session), class: 'btn btn-sm btn-outline-warning' %>
+  </div>
+</div> <!-- end of sessions-card -->

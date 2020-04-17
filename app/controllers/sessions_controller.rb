@@ -6,6 +6,7 @@ class SessionsController < ApplicationController
   end
 
   def show
+    @session_calendar = Session.where(id: @session.id)
   end
 
   def new

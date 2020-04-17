@@ -1,5 +1,7 @@
 {
   "name": "desafio_bugle",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "bootstrap": "^4.4.1"
+  }
 }

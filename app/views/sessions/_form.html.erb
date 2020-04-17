@@ -1,6 +1,12 @@
 <%= simple_form_for @session do |f| %>
   <%= f.input :name, required: true %>
-  <%= f.input :start_date, required: true %>
-  <%= f.input :end_date, required: true %>
-  <%= f.submit %>
+  <%= f.input :start_date, required: true, order: %i(day month year) %>
+  <%= f.input :end_date, required: true, order: %i(day month year) %>
+  <div class="d-flex flex-row justify-content-between">
+    <%= link_to 'Back', :back, class: 'btn btn-sm btn-outline-info' %>
+    <% if action_name == 'edit' %>
+      <%= link_to 'Delete Session', session_path(@session), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-sm btn-outline-danger' %>
+    <% end %>
+    <%= f.submit class: 'btn btn-sm btn-info' %>
+  </div>
 <% end %>

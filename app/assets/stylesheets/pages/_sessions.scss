@@ -1,0 +1,74 @@
+// INDEX
+.sessions-list-headers {
+  position: sticky;
+  z-index: 2;
+  top: 82px;
+  background-color: $light-gray;
+  color: $teal;
+}
+
+.sessions-item {
+  height: 60px;
+  background-color: $white;
+  padding: 8px 24px;
+  p {
+    color: $dark-gray;
+  }
+  a {
+    text-decoration: none;
+    color: $teal;
+    &:hover {
+      color: #007e80;
+    }
+  }
+  &:hover {
+    padding: 7px 23px;
+    border: 1px solid $teal;
+  }
+  .sessions-edit, .sessions-delete {
+    color: $teal;
+  }
+  .sessions-edit:hover {
+    color: $yellow;
+  }
+  .sessions-delete:hover {
+    color: $red;
+  }
+}
+
+// SHOW
+.sessions-card {
+  background-color: $white;
+  margin-top: 40px;
+}
+
+.sessions-card-main {
+  i {
+    font-size: 80px;
+  }
+}
+
+.sessions-header {
+  h2 {
+    color: $teal;
+  }
+}
+
+.sessions-card-side {
+  border: 1px solid $dark-gray;
+  color: $dark-gray;
+  i {
+    font-size: 24px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+

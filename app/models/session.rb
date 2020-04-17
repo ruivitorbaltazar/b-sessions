@@ -3,6 +3,8 @@ class Session < ApplicationRecord
   validates :start_date, presence: true
   validates :end_date, presence: true
 
+  has_many :trainees, dependent: :destroy
+
   def start_time
       self.start_date
   end

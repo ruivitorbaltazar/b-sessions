@@ -7,10 +7,13 @@ class SessionsController < ApplicationController
 
   def show
     @session_calendar = Session.where(id: @session.id)
+    @trainees = Trainee.where(session_id: @session)
   end
 
   def new
     @session = Session.new
+    # @trainees = Trainee.where(session_id: @session)
+    @trainee = Trainee.new
   end
 
   def create
@@ -23,6 +26,8 @@ class SessionsController < ApplicationController
   end
 
   def edit
+    # @trainees = Trainee.where(session_id: @session)
+    @trainee = Trainee.new
   end
 
   def update

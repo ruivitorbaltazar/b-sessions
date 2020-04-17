@@ -5,12 +5,11 @@
 
   <div class="d-flex flex-row justify-content-end">
     <div class="sessions-card-main col-10 p-0">
-      <h5 class="mb-2">Trainees (3<%#= @trainees.size %>)</h5>
+      <h5 class="mb-2">Trainees (<%= @trainees.size %>)</h5>
       <ul>
-        <li class="trainee-item">Alberto Contador ** change me **</li>
-        <%# @trainees.each do |trainee| %>
-          <!-- <li class="trainee-item"><%#= trainee.name %></li> -->
-        <%# end %>
+        <% @trainees.each do |trainee| %>
+          <li class="trainee-item"><%= trainee.name %></li>
+        <% end %>
       </ul>
 
     </div>

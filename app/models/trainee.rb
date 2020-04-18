@@ -1,3 +1,4 @@
 class Trainee < ApplicationRecord
-  belongs_to :session
+  has_many :session_trainees
+  has_many :sessions, through: :session_trainees
 end

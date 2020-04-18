@@ -42,23 +42,23 @@
   margin-top: 40px;
 }
 
-.sessions-card-main {
-  i {
-    font-size: 80px;
-  }
-}
-
-.sessions-header {
+.sessions-card-header {
   h2 {
     color: $teal;
   }
 }
 
-.sessions-card-side {
+.sessions-card-dates {
   border: 1px solid $dark-gray;
   color: $dark-gray;
   i {
     font-size: 24px;
+  }
+}
+
+.sessions-card-trainees {
+  i {
+    font-size: 80px;
   }
 }
 

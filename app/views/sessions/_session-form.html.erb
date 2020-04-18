@@ -3,6 +3,10 @@
   <%= f.input :start_date, required: true, order: %i(day month year) %>
   <%= f.input :end_date, required: true, order: %i(day month year) %>
   <%= f.association :trainees %>
+  <%= f.simple_fields_for :trainees do |t| %>
+    <%= t.input :name %>
+    <%= t.input :email %>
+  <% end %>
   <div class="d-flex flex-row justify-content-between">
     <%= link_to 'Back', :back, class: 'btn btn-sm btn-outline-info' %>
     <% if action_name == 'edit' %>

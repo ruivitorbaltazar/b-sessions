@@ -7,13 +7,11 @@ class SessionsController < ApplicationController
 
   def show
     @session_calendar = Session.where(id: @session.id)
-    @trainees = Trainee.where(session_id: @session)
+    @trainees = SessionTrainee.where(session_id: @session)
   end
 
   def new
     @session = Session.new
-    # @trainees = Trainee.where(session_id: @session)
-    @trainee = Trainee.new
   end
 
   def create
@@ -26,12 +24,13 @@ class SessionsController < ApplicationController
   end
 
   def edit
-    # @trainees = Trainee.where(session_id: @session)
+    @trainees = Trainee.where(session_id: @session)
     @trainee = Trainee.new
   end
 
   def update
     if @session.update(session_params)
+
       redirect_to sessions_path
     else
       render :edit
@@ -53,6 +52,6 @@ class SessionsController < ApplicationController
   end
 
   def session_params
-    params.require(:session).permit(:name, :start_date, :end_date)
+    params.require(:session).permit(:name, :start_date, :end_date, trainees: [:id, :name, :email])
   end
 end

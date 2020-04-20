@@ -1,7 +1,41 @@
 <div class="sessions-card p-4">
-  <div class="sessions-header mb-4">
+  <div class="sessions-card-header mb-4">
     <h2>Edit "<%= @session.name %>"</h2>
   </div>
 
-  <%= render partial: 'form' %>
+  <div class="sessions-card-container d-flex flex-row">
+
+    <div class="sessions-card-details col-8 pl-0 pr-3 border-right d-flex flex-column align-items-center">
+      <%= render partial: 'form' %>
+    </div> <!-- end of sessions-card-details -->
+    <div class="sessions-card-trainees col-4 pl-3 pr-0">
+      <div class="pr-1 mb-2 d-flex flex-row justify-content-between align-items-center">
+        <h5>Trainees (<%= @session_trainees.size %>)</h5>
+        <div class="button-wrapper d-flex justify-content-end align-items-center">
+          <p class="button-tip mr-2">Add</p>
+          <button class="show-add-trainee d-flex justify-content-center align-items-center"><i class="fas fa-plus"></i></button>
+        </div>
+      </div>
+      <%= render partial: 'session_trainees/form' %>
+      <ul class="list-trainees list-unstyled">
+        <% @session_trainees.each do |session_trainee| %>
+          <li class="trainee-item-edit py-1 pr-1 d-flex flex-row justify-content-between">
+            <div>
+              <i class="fas fa-chevron-right mr-1"></i>
+              <%= session_trainee.trainee.name %>
+            </div>
+              <div class="button-wrapper d-flex justify-content-end align-items-center">
+                <p class="button-tip mr-2">Remove</p>
+                <%= link_to session_session_trainee_path(@session, session_trainee), method: :delete, data: { confirm: "Are you sure?" },
+                  class: 'show-remove-trainee d-flex justify-content-center align-items-center' do %>
+                  <i class="fas fa-minus"></i>
+                <% end %>
+              </div>
+          </li>
+        <% end %>
+      </ul>
+    </div> <!-- end of sessions-card-trainees -->
+
+  </div> <!-- end of sessions-card-container -->
+
 </div> <!-- end of sessions-card -->

@@ -14,8 +14,11 @@
 
   <body>
     <%= render 'shared/navbar' %>
-      <div class="main-container col-6 p-0 mx-auto">
-        <%= yield %>
-      </div> <!-- end of main-container -->
+    <div class="main-container col-6 p-0 mx-auto">
+      <%= yield %>
+    </div> <!-- end of main-container -->
+
+    <%= javascript_pack_tag 'application' %>
+
   </body>
 </html>

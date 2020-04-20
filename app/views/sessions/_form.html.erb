@@ -1,4 +1,4 @@
-<%= simple_form_for @session do |f| %>
+<%= simple_form_for @session, html: { class: 'w-100' } do |f| %>
   <%= f.input :name, required: true %>
   <%= f.input :start_date, required: true, order: %i(day month year) %>
   <%= f.input :end_date, required: true, order: %i(day month year) %>

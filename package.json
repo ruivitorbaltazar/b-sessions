@@ -2,6 +2,10 @@
   "name": "desafio_bugle",
   "private": true,
   "dependencies": {
+    "@rails/webpacker": "5.0.1",
     "bootstrap": "^4.4.1"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^3.10.3"
   }
 }

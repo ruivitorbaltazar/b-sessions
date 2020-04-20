@@ -42,33 +42,86 @@
   margin-top: 40px;
 }
 
-.sessions-card-main {
-  i {
-    font-size: 80px;
-  }
-}
-
-.sessions-header {
+.sessions-card-header {
   h2 {
     color: $teal;
   }
 }
 
-.sessions-card-side {
+.sessions-start-date, .sessions-end-date {
   border: 1px solid $dark-gray;
   color: $dark-gray;
+}
+
+.sessions-arrow-date {
+  font-size: 32px;
+  color: $dark-gray;
+}
+
+// EDIT
+.show-add-trainee, .show-remove-trainee {
+  width: 24px;
+  height: 24px;
+  padding: 5px;
+  border-radius: 50%;
+  outline: none;
   i {
-    font-size: 24px;
+    line-height: 0;
+  }
+  &:hover {
+    border: none;
+    color: $white;
+  }
+  &:focus {
+    outline: none;
   }
 }
 
+.show-add-trainee {
+  color: $teal;
+  border: 2px solid $teal;
+  &:hover {
+    background-color: $teal;
+  }
+  transition: all 200ms ease;
+}
 
+.hide-add-trainee {
+  transform: rotate(45deg);
+}
 
+.show-remove-trainee {
+  visibility: hidden;
+  text-decoration: none;
+  color: $red;
+  border: 2px solid $red;
+  &:hover {
+    background-color: $red;
+    text-decoration: none;
+  }
+}
 
+.trainee-item-edit {
+  &:hover {
+    background-color: $light-gray;
+    .show-remove-trainee {
+      visibility: visible;
+    }
+  }
+}
 
-
-
-
+.button-wrapper {
+  .button-tip {
+    visibility: hidden;
+    font-size: 12px;
+    color: $dark-gray;
+  }
+  &:hover {
+    .button-tip{
+      visibility: visible;
+    }
+  }
+}
 
 
 

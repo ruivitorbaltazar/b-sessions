@@ -6,8 +6,7 @@ class SessionsController < ApplicationController
   end
 
   def show
-    @session_calendar = Session.where(id: @session.id)
-    @trainees = SessionTrainee.where(session_id: @session)
+    @session_trainees = SessionTrainee.where(session_id: @session)
   end
 
   def new
@@ -24,14 +23,14 @@ class SessionsController < ApplicationController
   end
 
   def edit
-    @trainees = Trainee.where(session_id: @session)
+    @session_trainees = SessionTrainee.where(session_id: @session)
+    @session_trainee = SessionTrainee.new
     @trainee = Trainee.new
   end
 
   def update
     if @session.update(session_params)
-
-      redirect_to sessions_path
+      redirect_to session_path(@session)
     else
       render :edit
     end

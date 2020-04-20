@@ -39,7 +39,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.12.0'
 gem 'simple_form'
-gem "simple_calendar", "~> 2.0"
+gem 'webpacker', '~> 5.x'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

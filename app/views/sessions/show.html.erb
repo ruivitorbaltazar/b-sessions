@@ -5,37 +5,48 @@
 
   <div class="sessions-card-container d-flex flex-row">
 
-    <div class="sessions-card-dates col-8 p-2 d-flex flex-column align-items-center">
-      <div class="sessions-start-date mb-2 d-flex justify-content-between">
-        <h1 class="mr-2"><%= @session.start_date.strftime("%d") %></h1>
-        <div>
-          <p><%= @session.start_date.strftime("%b") %></p>
+    <div class="sessions-card-details pl-0 pr-3 col-8 border-right d-flex flex-column justify-content-between">
+      <div class="sessions-dates d-flex flex-row align-items-center">
+        <div class="sessions-start-date col-5 p-3 text-center">
+          <h1><%= @session.start_date.strftime("%d") %></h1>
+          <p><%= @session.start_date.strftime("%B") %></p>
           <h5><%= @session.start_date.strftime("%Y") %></h5>
-        </div>
-      </div> <!-- end of sessions-start-date -->
-      <i class="fas fa-arrow-down"></i>
-      <div class="sessions-end-date mt-2 d-flex justify-content-between">
-        <h1 class="mr-2"><%= @session.end_date.strftime("%d") %></h1>
-        <div>
-          <p><%= @session.end_date.strftime("%b") %></p>
-          <h5><%= @session.end_date.strftime("%Y") %></h5>
-        </div>
-      </div> <!-- end of sessions-end-date -->
-    </div> <!-- end of sessions-card-dates -->
+        </div> <!-- end of sessions-start-date -->
 
-    <div class="sessions-card-trainees col-4 p-0">
-      <h5 class="mb-2">Trainees (<%= @trainees.size %>)</h5>
-      <ul>
-        <% @trainees.each do |trainee| %>
-          <li class="trainee-item"><%= trainee.trainee.name %></li>
+        <div class="sessions-arrow-date col-2 text-center">
+          <i class="fas fa-arrow-right"></i>
+        </div>
+
+        <div class="sessions-end-date col-5 p-3 text-center">
+          <h1><%= @session.end_date.strftime("%d") %></h1>
+          <p><%= @session.end_date.strftime("%B") %></p>
+          <h5><%= @session.end_date.strftime("%Y") %></h5>
+        </div> <!-- end of sessions-end-date -->
+      </div> <!-- end of sessions-date -->
+
+      <div class="sessions-footer d-flex flex-row justify-content-between mt-4">
+        <%= link_to 'Back', sessions_path, class: 'btn btn-sm btn-outline-info' %>
+        <%= link_to 'Edit Session', edit_session_path(@session), class: 'btn btn-sm btn-outline-warning' %>
+      </div> <!-- end of sessions-footer -->
+
+    </div> <!-- end of sessions-card-details -->
+
+    <div class="sessions-card-trainees col-4 pl-3 pr-0">
+      <div class="pr-1 mb-2">
+        <h5>Trainees (<%= @session_trainees.size %>)</h5>
+      </div>
+      <ul class="list-trainees list-unstyled">
+        <% @session_trainees.each do |session_trainee| %>
+          <li class="trainee-item-edit py-1 pr-1 d-flex flex-row justify-content-between">
+            <div>
+              <i class="fas fa-chevron-right mr-1"></i>
+              <%= session_trainee.trainee.name %>
+            </div>
+          </li>
         <% end %>
       </ul>
     </div> <!-- end of sessions-card-trainees -->
 
   </div> <!-- end of sessions-card-container -->
 
-  <div class="sessions-footer d-flex flex-row justify-content-between mt-4">
-    <%= link_to 'Back', sessions_path, class: 'btn btn-sm btn-outline-info' %>
-    <%= link_to 'Edit Session', edit_session_path(@session), class: 'btn btn-sm btn-outline-warning' %>
-  </div> <!-- end of sessions-footer -->
 </div> <!-- end of sessions-card -->

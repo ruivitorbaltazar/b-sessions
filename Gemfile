@@ -40,6 +40,7 @@ gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.12.0'
 gem 'simple_form'
 gem 'webpacker', '~> 5.x'
+gem 'devise'
 
 
 group :development, :test do

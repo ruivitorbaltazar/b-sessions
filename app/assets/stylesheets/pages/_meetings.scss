@@ -1,5 +1,5 @@
 // INDEX
-.sessions-list-headers {
+.meetings-list-headers {
   position: sticky;
   z-index: 2;
   top: 82px;
@@ -7,7 +7,7 @@
   color: $teal;
 }
 
-.sessions-item {
+.meetings-item {
   height: 60px;
   background-color: $white;
   padding: 8px 24px;
@@ -25,35 +25,35 @@
     padding: 7px 23px;
     border: 1px solid $teal;
   }
-  .sessions-edit, .sessions-delete {
+  .meetings-edit, .meetings-delete {
     color: $teal;
   }
-  .sessions-edit:hover {
+  .meetings-edit:hover {
     color: $yellow;
   }
-  .sessions-delete:hover {
+  .meetings-delete:hover {
     color: $red;
   }
 }
 
 // SHOW
-.sessions-card {
+.meetings-card {
   background-color: $white;
   margin-top: 40px;
 }
 
-.sessions-card-header {
+.meetings-card-header {
   h2 {
     color: $teal;
   }
 }
 
-.sessions-start-date, .sessions-end-date {
+.meetings-start-date, .meetings-end-date {
   border: 1px solid $dark-gray;
   color: $dark-gray;
 }
 
-.sessions-arrow-date {
+.meetings-arrow-date {
   font-size: 32px;
   color: $dark-gray;
 }

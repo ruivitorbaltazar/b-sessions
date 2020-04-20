@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  root to: 'sessions#index'
-  resources :sessions do
-    resources :session_trainees
+  devise_for :users
+  root to: 'meetings#index'
+  resources :meetings do
+    resources :meeting_trainees
   end
 end

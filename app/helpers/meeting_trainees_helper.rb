@@ -1,0 +1,2 @@
+module MeetingTraineesHelper
+end

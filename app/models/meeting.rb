@@ -1,6 +1,6 @@
-class Session < ApplicationRecord
-  has_many :session_trainees
-  has_many :trainees, through: :session_trainees
+class Meeting < ApplicationRecord
+  has_many :meeting_trainees
+  has_many :trainees, through: :meeting_trainees
 
   validates :name, presence: true
   validates :start_date, presence: true

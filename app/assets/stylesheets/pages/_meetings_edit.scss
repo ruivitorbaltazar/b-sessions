@@ -1,0 +1,63 @@
+.show-add-trainee, .show-remove-trainee {
+  width: 24px;
+  height: 24px;
+  padding: 5px;
+  border-radius: 50%;
+  outline: none;
+  i {
+    line-height: 0;
+  }
+  &:hover {
+    border: none;
+    color: $white;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+.show-add-trainee {
+  color: $primary;
+  border: 2px solid $primary;
+  &:hover {
+    background-color: $primary;
+  }
+  transition: all 200ms ease;
+}
+
+.hide-add-trainee {
+  transform: rotate(45deg);
+}
+
+.show-remove-trainee {
+  visibility: hidden;
+  text-decoration: none;
+  color: $danger;
+  border: 2px solid $danger;
+  &:hover {
+    background-color: $danger;
+    text-decoration: none;
+  }
+}
+
+.trainee-item-edit {
+  &:hover {
+    background-color: $light-gray;
+    .show-remove-trainee {
+      visibility: visible;
+    }
+  }
+}
+
+.button-wrapper {
+  .button-tip {
+    visibility: hidden;
+    font-size: 12px;
+    color: $dark-gray;
+  }
+  &:hover {
+    .button-tip{
+      visibility: visible;
+    }
+  }
+}

@@ -4,17 +4,15 @@ class MeetingTraineesController < ApplicationController
 
   def create
     @trainee = Trainee.new(trainee_params[:trainees])
-    if @trainee.save
-      meeting_trainee = MeetingTrainee.new
-      meeting_trainee.meeting = @meeting
-      meeting_trainee.trainee = @trainee
-      if meeting_trainee.save
-        redirect_to edit_meeting_path(@meeting)
+    if Trainee.exists?(email: @trainee.email)
+      @trainee = Trainee.find_by(email: @trainee.email)
+      gen_meeting_trainee
+    else
+      if @trainee.save
+        gen_meeting_trainee
       else
         render 'meetings/edit'
       end
-    else
-      render 'meetings/edit'
     end
   end
 
@@ -41,5 +39,16 @@ class MeetingTraineesController < ApplicationController
 
   def trainee_params
     params.require(:meeting_trainee).permit(trainees: [:name, :email])
+  end
+
+  def gen_meeting_trainee
+    meeting_trainee = MeetingTrainee.new
+    meeting_trainee.meeting = @meeting
+    meeting_trainee.trainee = @trainee
+    if meeting_trainee.save
+      redirect_to edit_meeting_path(@meeting)
+    else
+      render 'meetings/edit'
+    end
   end
 end

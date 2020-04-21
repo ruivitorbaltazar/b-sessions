@@ -1,14 +1,14 @@
-<div class="meetings-card p-4">
-  <div class="meetings-card-header mb-4">
+<div class="main-card p-4">
+  <div class="main-card-header mb-4">
     <h2>Edit "<%= @meeting.name %>"</h2>
-  </div>
+  </div> <!-- end of main-card-header -->
 
-  <div class="meetings-card-container d-flex flex-row">
+  <div class="main-card-container d-flex flex-row">
 
-    <div class="meetings-card-details col-8 pl-0 pr-3 border-right d-flex flex-column align-items-center">
+    <div class="main-card-details col-8 pl-0 pr-3 border-right d-flex flex-column align-items-center">
       <%= render partial: 'form' %>
-    </div> <!-- end of meetings-card-details -->
-    <div class="meetings-card-trainees col-4 pl-3 pr-0">
+    </div> <!-- end of main-card-details -->
+    <div class="main-card-side col-4 pl-3 pr-0">
       <div class="pr-1 mb-2 d-flex flex-row justify-content-between align-items-center">
         <h5>Trainees (<%= @meeting_trainees.size %>)</h5>
         <div class="button-wrapper d-flex justify-content-end align-items-center">
@@ -34,8 +34,8 @@
           </li>
         <% end %>
       </ul>
-    </div> <!-- end of meetings-card-trainees -->
+    </div> <!-- end of main-card-side -->
 
-  </div> <!-- end of meetings-card-container -->
+  </div> <!-- end of main-card-container -->
 
-</div> <!-- end of meetings-card -->
+</div> <!-- end of main-card -->

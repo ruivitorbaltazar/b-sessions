@@ -1,0 +1,20 @@
+.main-card {
+  background-color: $white;
+  margin-top: 40px;
+}
+
+.main-card-header {
+  h2 {
+    color: $primary;
+  }
+}
+
+.meetings-start-date, .meetings-end-date {
+  border: 1px solid $dark-gray;
+  color: $dark-gray;
+}
+
+.meetings-arrow-date {
+  font-size: 32px;
+  color: $dark-gray;
+}

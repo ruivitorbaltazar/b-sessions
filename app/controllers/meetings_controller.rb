@@ -1,9 +1,10 @@
 class MeetingsController < ApplicationController
-  skip_before_action :authenticate_user!, only: :index
   before_action :fetch_meeting, only: %i[show edit update destroy]
 
   def index
-    @meetings = Meeting.all
+    @meetings_as_host = current_user.meetings
+    user_trainee = Trainee.find_by(email: current_user.email)
+    @meetings_as_trainee = user_trainee.meetings.where.not(user_id: current_user)
   end
 
   def show
@@ -16,6 +17,7 @@ class MeetingsController < ApplicationController
 
   def create
     @meeting = Meeting.new(meeting_params)
+    @meeting.user = current_user
     if @meeting.save
       redirect_to meetings_path
     else
@@ -30,6 +32,7 @@ class MeetingsController < ApplicationController
   end
 
   def update
+    @meeting.user = current_user
     if @meeting.update(meeting_params)
       redirect_to meeting_path(@meeting)
     else
@@ -52,6 +55,6 @@ class MeetingsController < ApplicationController
   end
 
   def meeting_params
-    params.require(:meeting).permit(:name, :start_date, :end_date, trainees: [:id, :name, :email])
+    params.require(:meeting).permit(:name, :start_date, :end_date)
   end
 end

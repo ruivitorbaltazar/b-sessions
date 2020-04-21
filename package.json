@@ -1,5 +1,5 @@
 {
-  "name": "desafio_bugle",
+  "name": "b-sessions",
   "private": true,
   "dependencies": {
     "@rails/webpacker": "5.0.1",

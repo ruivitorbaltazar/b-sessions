@@ -1,0 +1,20 @@
+<div class="main-card card-landing p-4">
+  <div class="main-card-container d-flex flex-row">
+
+    <div class="main-card-details text-secondary text-center col-8 pl-0 pr-3 border-right d-flex flex-column justify-content-center align-items-center">
+      <h3>Welcome to</h3>
+      <h1 id="brand" class="mb-2">b sessions</h1>
+      <h5><em>Your best mock-up of a <br>session management platform.</em></h5>
+    </div> <!-- end of main-card-details -->
+
+    <div class="main-card-side col-4 pl-3 pr-0">
+      <div class="login-section">
+        <%= render file: '/devise/sessions/new' %>
+      </div>
+      <div class="signup-section d-none">
+        <%= render file: '/devise/registrations/new' %>
+      </div>
+    </div> <!-- end of main-card-side -->
+
+  </div> <!-- end of main-card-container -->
+</div> <!-- end of main-card -->

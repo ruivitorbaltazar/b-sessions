@@ -1,0 +1,63 @@
+.meetings-list-headers {
+  position: sticky;
+  z-index: 2;
+  top: 82px;
+  background-color: $light-gray;
+  color: $primary;
+}
+
+#meetings-host {
+  .meetings-item {
+    border-left: 4px solid $primary;
+    padding: 8px 24px 8px 20px;
+    position: relative;
+    &:hover {
+      padding: 7px 23px 7px 20px;
+    }
+    .meetings-item-tag {
+      position: absolute;
+      left: -40px;
+      transform: rotate(-90deg);
+      user-select: none;
+      letter-spacing: 5px;
+      p {
+        color: $primary;
+      }
+    }
+  }
+}
+
+#meetings-trainee {
+  .meetings-item-tag {
+    display: none;
+  }
+}
+
+.meetings-item {
+  height: 60px;
+  background-color: $white;
+  padding: 8px 24px;
+  p {
+    color: $dark-gray;
+  }
+  a {
+    text-decoration: none;
+    color: $primary;
+    &:hover {
+      color: darken($primary, 8%);
+    }
+  }
+  &:hover {
+    padding: 7px 23px;
+    border: 1px solid $primary;
+  }
+  .meetings-edit, .meetings-delete {
+    color: $primary;
+  }
+  .meetings-edit:hover {
+    color: $warning;
+  }
+  .meetings-delete:hover {
+    color: $danger;
+  }
+}

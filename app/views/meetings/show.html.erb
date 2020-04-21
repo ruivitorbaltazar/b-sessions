@@ -1,0 +1,50 @@
+<div class="main-card p-4">
+  <div class="main-card-header mb-4">
+    <h2><%= @meeting.name %></h2>
+  </div> <!-- end of main-card-header -->
+
+  <div class="main-card-container d-flex flex-row">
+
+    <div class="main-card-details pl-0 pr-3 col-8 border-right d-flex flex-column justify-content-between">
+      <div class="meetings-dates d-flex flex-row align-items-center">
+        <div class="meetings-start-date col-5 p-3 text-center">
+          <h1><%= @meeting.start_date.strftime("%d") %></h1>
+          <p><%= @meeting.start_date.strftime("%B") %></p>
+          <h5><%= @meeting.start_date.strftime("%Y") %></h5>
+        </div> <!-- end of meetings-start-date -->
+
+        <div class="meetings-arrow-date col-2 text-center">
+          <i class="fas fa-arrow-right"></i>
+        </div>
+
+        <div class="meetings-end-date col-5 p-3 text-center">
+          <h1><%= @meeting.end_date.strftime("%d") %></h1>
+          <p><%= @meeting.end_date.strftime("%B") %></p>
+          <h5><%= @meeting.end_date.strftime("%Y") %></h5>
+        </div> <!-- end of meetings-end-date -->
+      </div> <!-- end of meetings-date -->
+
+      <div class="meetings-footer d-flex flex-row justify-content-between mt-4">
+        <%= link_to 'Back', meetings_path, class: 'btn btn-sm btn-outline-primary' %>
+        <%= link_to 'Edit meeting', edit_meeting_path(@meeting), class: 'btn btn-sm btn-outline-warning' %>
+      </div> <!-- end of meetings-footer -->
+    </div> <!-- end of main-card-details -->
+
+    <div class="main-card-side col-4 pl-3 pr-0">
+      <div class="pr-1 mb-2">
+        <h5>Trainees (<%= @meeting_trainees.size %>)</h5>
+      </div>
+      <ul class="list-trainees list-unstyled">
+        <% @meeting_trainees.each do |meeting_trainee| %>
+          <li class="trainee-item-edit py-1 pr-1 d-flex flex-row justify-content-between">
+            <div>
+              <i class="fas fa-chevron-right mr-1"></i>
+              <%= meeting_trainee.trainee.name %>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    </div> <!-- end of main-card-side -->
+
+  </div> <!-- end of main-card-container -->
+</div> <!-- end of main-card -->

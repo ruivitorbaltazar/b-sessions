@@ -1,0 +1,15 @@
+// Place all the styles related to the pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.main-card-details {
+  text-shadow: 0 0 8px rgba($secondary, 0.3);
+  #brand {
+    font-weight: 700;
+    color: $primary;
+  }
+}
+
+.card-landing {
+  min-height: 440px;
+}

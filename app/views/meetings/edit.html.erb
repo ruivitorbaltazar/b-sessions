@@ -1,32 +1,32 @@
-<div class="sessions-card p-4">
-  <div class="sessions-card-header mb-4">
-    <h2>Edit "<%= @session.name %>"</h2>
-  </div>
+<div class="main-card p-4">
+  <div class="main-card-header mb-4">
+    <h2>Edit "<%= @meeting.name %>"</h2>
+  </div> <!-- end of main-card-header -->
 
-  <div class="sessions-card-container d-flex flex-row">
+  <div class="main-card-container d-flex flex-row">
 
-    <div class="sessions-card-details col-8 pl-0 pr-3 border-right d-flex flex-column align-items-center">
+    <div class="main-card-details col-8 pl-0 pr-3 border-right d-flex flex-column align-items-center">
       <%= render partial: 'form' %>
-    </div> <!-- end of sessions-card-details -->
-    <div class="sessions-card-trainees col-4 pl-3 pr-0">
+    </div> <!-- end of main-card-details -->
+    <div class="main-card-side col-4 pl-3 pr-0">
       <div class="pr-1 mb-2 d-flex flex-row justify-content-between align-items-center">
-        <h5>Trainees (<%= @session_trainees.size %>)</h5>
+        <h5>Trainees (<%= @meeting_trainees.size %>)</h5>
         <div class="button-wrapper d-flex justify-content-end align-items-center">
           <p class="button-tip mr-2">Add</p>
           <button class="show-add-trainee d-flex justify-content-center align-items-center"><i class="fas fa-plus"></i></button>
         </div>
       </div>
-      <%= render partial: 'session_trainees/form' %>
+      <%= render partial: 'meeting_trainees/form' %>
       <ul class="list-trainees list-unstyled">
-        <% @session_trainees.each do |session_trainee| %>
+        <% @meeting_trainees.each do |meeting_trainee| %>
           <li class="trainee-item-edit py-1 pr-1 d-flex flex-row justify-content-between">
             <div>
               <i class="fas fa-chevron-right mr-1"></i>
-              <%= session_trainee.trainee.name %>
+              <%= meeting_trainee.trainee.name %>
             </div>
               <div class="button-wrapper d-flex justify-content-end align-items-center">
                 <p class="button-tip mr-2">Remove</p>
-                <%= link_to session_session_trainee_path(@session, session_trainee), method: :delete, data: { confirm: "Are you sure?" },
+                <%= link_to meeting_meeting_trainee_path(@meeting, meeting_trainee), method: :delete, data: { confirm: "Are you sure?" },
                   class: 'show-remove-trainee d-flex justify-content-center align-items-center' do %>
                   <i class="fas fa-minus"></i>
                 <% end %>
@@ -34,8 +34,8 @@
           </li>
         <% end %>
       </ul>
-    </div> <!-- end of sessions-card-trainees -->
+    </div> <!-- end of main-card-side -->
 
-  </div> <!-- end of sessions-card-container -->
+  </div> <!-- end of main-card-container -->
 
-</div> <!-- end of sessions-card -->
+</div> <!-- end of main-card -->

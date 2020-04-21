@@ -1,18 +1,18 @@
 require 'test_helper'
 
-class SessionTraineesControllerTest < ActionDispatch::IntegrationTest
+class MeetingTraineesControllerTest < ActionDispatch::IntegrationTest
   test "should get create" do
-    get session_trainees_create_url
+    get meeting_trainees_create_url
     assert_response :success
   end
 
   test "should get update" do
-    get session_trainees_update_url
+    get meeting_trainees_update_url
     assert_response :success
   end
 
   test "should get destroy" do
-    get session_trainees_destroy_url
+    get meeting_trainees_destroy_url
     assert_response :success
   end
 

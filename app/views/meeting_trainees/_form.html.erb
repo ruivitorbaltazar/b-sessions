@@ -1,9 +1,9 @@
-<%= simple_form_for [@session, @session_trainee], html: { class: 'form-add-trainee d-none' } do |f| %>
+<%= simple_form_for [@meeting, @meeting_trainee], html: { class: 'form-add-trainee d-none' } do |f| %>
   <%= f.simple_fields_for :trainees do |t| %>
     <%= t.input :name %>
     <%= t.input :email %>
   <% end %>
   <div class="d-flex flex-row justify-content-end">
-    <%= f.submit 'Add Trainee', class: 'btn btn-sm btn-outline-info' %>
+    <%= f.submit 'Add Trainee', class: 'btn btn-sm btn-outline-primary' %>
   </div>
 <% end %>

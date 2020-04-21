@@ -4,7 +4,7 @@ class MeetingsController < ApplicationController
   def index
     @meetings_as_host = current_user.meetings
     user_trainee = Trainee.find_by(email: current_user.email)
-    @meetings_as_trainee = user_trainee.meetings.where.not(user_id: current_user)
+    @meetings_as_trainee = user_trainee ? user_trainee.meetings.where.not(user_id: current_user) : []
   end
 
   def show

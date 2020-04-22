@@ -26,7 +26,11 @@
 
       <div class="meetings-footer d-flex flex-row justify-content-between mt-4">
         <%= link_to 'Back', meetings_path, class: 'btn btn-sm btn-outline-primary' %>
-        <%= link_to 'Edit meeting', edit_meeting_path(@meeting), class: 'btn btn-sm btn-outline-warning' %>
+        <% if @meeting.user == current_user %>
+          <%= link_to 'Edit meeting', edit_meeting_path(@meeting), class: 'btn btn-sm btn-outline-warning' %>
+        <% else %>
+          <p><span class="text-secondary">hosted by </span><%= @meeting.user.name %></p>
+        <% end %>
       </div> <!-- end of meetings-footer -->
     </div> <!-- end of main-card-details -->
 

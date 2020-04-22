@@ -9,16 +9,22 @@
   <% end %>
   <p class="col-2 p-0"><%= meeting.start_date.strftime("%d %b %Y") %></p>
   <p class="col-2 p-0"><%= meeting.end_date.strftime("%d %b %Y") %></p>
-  <div class="meetings-links col-2 m-0 p-0 d-flex flex-row">
-    <div class="col-6 p-0 text-right">
-      <%= link_to edit_meeting_path(meeting), class: 'meetings-edit' do %>
-        <i class="fas fa-edit"></i>
-      <% end %>
+  <% if meeting.user == current_user %>
+    <div class="meetings-links col-2 m-0 p-0 d-flex flex-row">
+      <div class="col-6 p-0 text-right">
+        <%= link_to edit_meeting_path(meeting), class: 'meetings-edit' do %>
+          <i class="fas fa-edit"></i>
+        <% end %>
+      </div>
+      <div class="col-6 p-0 text-right">
+        <%= link_to meeting_path(meeting), method: :delete, data: { confirm: "Are you sure?" }, class: 'meetings-delete' do %>
+          <i class="far fa-trash-alt"></i>
+        <% end %>
+      </div>
+    </div> <!-- end of meetings-links -->
+  <% else %>
+    <div class="col-2 m-0 p-0 d-flex justify-content-end">
+      <p>by <%= meeting.user.name %></p>
     </div>
-    <div class="col-6 p-0 text-right">
-      <%= link_to meeting_path(meeting), method: :delete, data: { confirm: "Are you sure?" }, class: 'meetings-delete' do %>
-        <i class="far fa-trash-alt"></i>
-      <% end %>
-    </div>
-  </div> <!-- end of meetings-links -->
+  <% end %>
 </div> <!-- end of meetings-item -->

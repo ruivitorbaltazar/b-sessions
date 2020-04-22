@@ -15,19 +15,19 @@ Simple CRUD app built by @ruivitorbaltazar with:
 It allows for:
 
 * Sign up/Log in/Log out as User
-![Landing](../app/assets/images/landing.png?raw=true)
+![Landing](../assets/landing.png?raw=true)
 
 * Create/Edit/Delete Sessions
-![New Session](../app/assets/images/new_session.png?raw=true)
+![New Session](../assets/new_session.png?raw=true)
 
 * See list of Sessions you are hosting or just attending
-![Sessions](../app/assets/images/sessions.png?raw=true)
+![Sessions](../assets/sessions.png?raw=true)
 
 * Check individual Session
-![Show Session](../app/assets/images/show_session.png?raw=true)
+![Show Session](../assets/show_session.png?raw=true)
 
 * Add/Remove Trainees to Sessions
-![Edit Session](../app/assets/images/edit_session.png?raw=true)
+![Edit Session](../assets/edit_session.png?raw=true)
 
 
 ## Local Setup

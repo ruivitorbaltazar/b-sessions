@@ -37,11 +37,11 @@ Just follow these steps, using the command line:
 
 1. Make sure Ruby is installed on your system:
 ```ruby -v```
-*If you don't see version of Ruby, check [how to install Ruby](https://guides.rubyonrails.org/v5.0/getting_started.html)*
+*If you don't see version of Ruby, check [how to install Ruby](https://www.ruby-lang.org/en/documentation/installation/)*
 
 2. Make sure Rails is also installed:
 ```rails -v```
-*If you don't see version of Rails, check [how to install Rails](https://www.ruby-lang.org/en/documentation/installation/)*
+*If you don't see version of Rails, check [how to install Rails](https://guides.rubyonrails.org/v5.0/getting_started.html)*
 
 3. Clone this repository into a folder of your choosing:
 ```git clone git@github.com:ruivitorbaltazar/b-sessions.git```

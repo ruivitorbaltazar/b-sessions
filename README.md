@@ -1,7 +1,7 @@
 # b - sessions
 
 'b - sessions' is a mock-up session management platform.
-Simple CRUD app built by @ruivitorbaltazar with:
+Simple CRUD app built by ![ruivitorbaltazar](github.com/ruivitorbaltazar) with:
 
 * Ruby 2.6.5
 

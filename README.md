@@ -1,24 +1,51 @@
-# README
+# b - sessions
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+'b - sessions' is a mock-up session management platform.
+Simple CRUD app built with:
 
-Things you may want to cover:
+* Ruby 2.6.5
 
-* Ruby version
+* Ruby on Rails 5.2.4.2
 
-* System dependencies
+* PostgreSQL 12.2
 
-* Configuration
+By [Rui Vítor Baltazar](https://github.com/ruivitorbaltazar)
 
-* Database creation
 
-* Database initialization
+## Features
 
-* How to run the test suite
+It allows for:
 
-* Services (job queues, cache servers, search engines, etc.)
+* Sign up/Log in/Log out as User
 
-* Deployment instructions
+* Create/Edit/Delete Sessions
 
-* ...
+* See list of Sessions you are hosting
+
+* See list of Sessions you are just attending
+
+* Add/Remove Trainees to Sessions
+
+
+## Local Setup
+
+You can clone this app to your machine to test it locally.
+Just follow these steps, using the command line:
+
+1. ruby -v
+
+2. rails -v
+
+3.
+```git clone git@github.com:ruivitorbaltazar/b-sessions.git```
+
+4. install dependencies
+
+5. db:create
+
+6. db:migrate
+
+7. db:seed
+
+8. rails s
+
